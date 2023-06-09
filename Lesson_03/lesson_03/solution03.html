@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution03</title>
+</head>
+
+<body>
+    <script>
+        //3.Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
+
+        //Крок 0. Вводимо позначення
+
+        //Крок 1. Введення величин
+
+        //let minNum = 1
+        //let maxNum = 2
+        //let enteredNum = parseFloat(prompt('Введіть число від 1 до 5'))
+
+        //Крок 2. Розв"язок заадачі
+        // if (enteredNum === randomNumber) alert('Bingo')
+        //else document.write(`.....Not this time(`)
+
+        let minNum = 1
+        let maxNum = 5
+        let firstEnteredNum = parseInt(prompt('Введіть число від 1 до 5'))
+        let secondEnteredNum = parseInt(prompt('Введіть число від 1 до 5'))
+
+        let randomNumber = minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+        document.write(`${randomNumber}`)
+
+        if (firstEnteredNum === randomNumber) document.write('....Bingo!!')
+        else if (firstEnteredNum !== randomNumber) document.write(`.....Not this time(`)
+        else if (secondEnteredNum === randomNumber) document.write('....Bingo!!')
+        else if (secondEnteredNum !== randomNumber) document.write(`.....Not this time(`)
+
+    </script>
+</body>
+
+</html>

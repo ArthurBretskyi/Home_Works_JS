@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution02</title>
+</head>
+<body>
+    <script>
+         //2.	З клавіатури вводиться ціна товару і кількість грошей. 
+         //Якщо грошей не вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, 
+         //то пропонуємо купити лотерею за 4 грн.
+
+        //Крок 0. Вводимо позначення
+
+        //Ціна товару - productPrice
+        //Кількість грошей - moneyAmount
+
+        //Крок 1. Введення величин
+
+        // let productPrice = parseFloat(prompt('Ціна товару'))
+        // let moneyAmount = parseFloat(prompt('Кількість грошей'))
+
+        // //Крок 2. Розв"язок заадачі
+        // if (moneyAmount < productPrice) alert('Sorry!Not enough money')
+        // else if (moneyAmount > productPrice) confirm('Не бажаете випрбувати своє везіння і придбати лотерею всього за 4грн')
+
+        let productPrice = parseFloat(prompt('Ціна товару'))
+        let moneyAmount = parseFloat(prompt('Кількість грошей'))
+
+        if (moneyAmount < productPrice) alert('Sorry!Not enough money')
+        else if (moneyAmount > productPrice) confirm('Не бажаете випробувати своє везіння і придбати лотерею всього за 4грн')
+    </script>
+</body>
+</html>
