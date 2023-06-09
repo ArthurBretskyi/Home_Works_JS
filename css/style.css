@@ -1,0 +1,34 @@
+.page__homeworks {
+}
+.homeworks {
+}
+.homeworks__container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.homeworks__title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+.homeworks__title:not(:last-child) {
+  margin-bottom: 40px;
+}
+.homeworks__body {
+}
+.homeworks__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.homeworks__item {
+}
+.homeworks__link {
+    font-size: 18px;
+    transition: color 0.4s ease 0s;
+}
+.homeworks__link:hover {
+    color: red;
+}

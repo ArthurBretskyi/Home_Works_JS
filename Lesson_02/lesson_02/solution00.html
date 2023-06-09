@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution00</title>
+</head>
+
+<body>
+    <script>
+        //Введення необхідних данних
+
+        let a = parseFloat(prompt('Введіть значення змінної а', '0'))
+        let b = parseFloat(prompt('Введіть значення змінної b', '0'))
+        let c = parseFloat(prompt('Введіть значення змінної c', '0'))
+
+        //Обчислення S1, S2, S3, S4
+
+        let s1 = a + 12 + b
+        let s2 = Math.sqrt((a + b) / (2 * a))
+        let s3 = Math.cbrt((a + b) * c)
+        let s4 = Math.sin(a / -b)
+
+        // Виведення результату
+
+        document.write(`S1 = ${s1} <br>`)
+        document.write(`S2 = ${s2} <br>`)
+        document.write(`S3 = ${s3} <br>`)
+        document.write(`S4 = ${s4}`)
+    </script>
+</body>
+
+</html>

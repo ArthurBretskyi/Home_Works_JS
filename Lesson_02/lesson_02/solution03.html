@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution03</title>
+</head>
+
+<body>
+    <script>
+        //Введення необхідних данних
+
+        let articlePrice = parseFloat(prompt('Вартість одениці товару', '0'))
+        let articleAmount = parseFloat(prompt('Кількість товару', '0'))
+        const interest = 5
+
+        //Обчислення totalPrice та VAT
+
+        let totalPrice = articlePrice * articleAmount
+        let vat = totalPrice / 100 * interest
+
+        // Виведення результату
+
+        document.write(`Total price = ${totalPrice} <br>`)
+        document.write(`VAT = ${vat}`)
+    </script>
+</body>
+
+</html>

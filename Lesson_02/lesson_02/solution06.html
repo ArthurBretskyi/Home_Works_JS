@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution06</title>
+</head>
+
+<body>
+    <script>
+
+        //Введення необхідних данних
+
+        let firstProductPrice = parseFloat(prompt('Введіть вартість першого товару', '0'))
+        let secondProductPrice = parseFloat(prompt('Введіть вартість другого товару', '0'))
+        let thirdProductPrice = parseFloat(prompt('Введіть вартість третьго товару', '0'))
+
+        let firstProductAmount = parseFloat(prompt('Введіть кількість першого товару', '0'))
+        let secondProductAmount = parseFloat(prompt('Введіть кількість другого товару', '0'))
+        let thirdProductAmount = parseFloat(prompt('Введіть кількість третьго товару', '0'))
+
+ //Обчислення productSumPrice та totalPrice
+
+ let firstProductSumPrice = firstProductPrice * firstProductAmount
+ let secondProductSumPrice = secondProductPrice * secondProductAmount
+ let thirdProductSumPrice = thirdProductPrice * thirdProductAmount
+
+ let totalPrice = firstProductSumPrice + secondProductSumPrice + thirdProductSumPrice
+
+
+ // Виведення результату
+
+    document.write(`
+        <table>
+    <thead>
+        <tr>
+            <th>Назва  товару</th>
+            <th >Кількість</th>
+            <th >Вартість</th>
+            <th >Загальна вартість товару</th>
+            <th >Загальна вартість</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Перший товар</td>
+            <td> ${firstProductAmount}</td>
+            <td>  ${firstProductPrice}</td>
+            <td>  ${firstProductSumPrice}</td>
+            <td>  ${totalPrice}</td>
+        </tr>
+        <tr>
+            <td>Другий товар</td>
+            <td> ${secondProductAmount}</td>
+            <td>  ${secondProductPrice}</td>
+            <td>  ${secondProductSumPrice}</td>
+        </tr>
+        <tr>
+            <td>Третій товар</td>
+            <td> ${thirdProductAmount}</td>
+            <td>  ${thirdProductPrice}</td>
+            <td>  ${thirdProductSumPrice}</td>
+        </tr>
+    </tbody>
+</table>
+        `)
+    </script>
+</body>
+
+</html>

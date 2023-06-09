@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution01</title>
+</head>
+
+<body>
+    <script>
+        //Введення необхідних данних
+
+        let a = parseFloat(prompt('Ведіть значення першої змінної', '0'))
+        let b = parseFloat(prompt('Ведіть значення другої змінної', '0'))
+
+        //Обчислення суми, добутку та частки змінних
+
+        let sum = a + b
+        let prod = a * b
+        let fraction = a / b
+
+        // Виведення результату
+
+            document.write(`
+        <table >
+  <tr>
+    <td>Сума</td>
+    <td>Добуток</td>
+    <td>Частка</td>
+  </tr>
+  <tr>
+    <td>${sum}</td>
+    <td>${prod}</td>
+    <td>${fraction.toFixed(2)}</td>
+  </tr>
+</table>
+        `)
+        
+    </script>
+</body>
+
+</html>
