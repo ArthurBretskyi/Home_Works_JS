@@ -1,0 +1,65 @@
+.page__task02 {
+}
+.task02 {
+}
+.task04__container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.task04__body {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+.task04__title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+.task04__title:not(:last-child) {
+  margin-bottom: 40px;
+}
+.task02__exercise {
+}
+.exercise {
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  border: 1px solid black;
+  padding: 15px;
+  background-color: rgb(183, 238, 75);
+}
+.exercise__title {
+  align-self: start;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+.exercise__text {
+  text-align: center;
+}
+.exercise__image {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+}
+img {
+  max-width: 100%;
+}
+.exercise__solution {
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  background-color: orange;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  transition: background-color 0.3s ease 0s;
+}
+.exercise__solution:hover {
+  background-color: rgb(234, 152, 0);
+}

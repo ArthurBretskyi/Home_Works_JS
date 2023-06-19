@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 04</title>
+</head>
+
+<body>
+    <h1>Каса. Користувачу повідомляють суму, яку йому треба сплатити. Користувач поступово вводить суму грошей до тих
+        пір, поки
+        суми не буде достатньо для оплати товарів (кожного разу користувачу повідомляють, яку ще суму потрібно ввести).
+    </h1>
+    <script>
+        let totalSum = 0
+        let productAmount = parseInt(prompt("Введіть кількість товарів"))
+        for (let i = 1; i <= productAmount; i++) {
+            let productPrice = parseFloat(prompt(`Яка вартість ${i} товару?`))
+            totalSum += productPrice
+        }
+        alert(`Сума до сплати ${totalSum}`)
+        let customerMoney
+        do {
+            customerMoney = parseFloat(prompt("Яка Ваша сума до сплати?"))
+            totalSum -= customerMoney
+            if (totalSum > 0) {
+                alert(`Ще не вистачає ${totalSum}`)
+            } else if (totalSum < 0) {
+                alert("Візміть Вашу решту. І дякуємо за покупку!")
+            } else alert("Дякуємо за покупку!")
+        } while (totalSum > 0);
+
+    </script>
+</body>
+
+</html>
