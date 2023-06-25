@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 01</title>
+</head>
+
+<body>
+    <h1>0. Вивести на екран
+        <div>A B C D E</div>
+        <div>B C D E F</div>
+        <div>C D E F G</div>
+        <div>D E F G H</div>
+        <div>E F G H I</div>
+    </h1>
+    <script>
+        //0. Вивести на екран
+        //A B C D E 
+        //B C D E F 
+        //C D E F G 
+        //D E F G H 
+        //E F G H I
+        let firstNum = 65
+        let lastNum = 69
+        let nextline 
+        for ( firstNum = 65; firstNum <= lastNum; firstNum++) {
+            for (nextline = 0; nextline < 5; nextline++) {
+               document.write(`${String.fromCharCode(firstNum + nextline)}`)
+            }
+            document.write (`<br>`)
+        }
+
+    </script>
+</body>
+
+</html>

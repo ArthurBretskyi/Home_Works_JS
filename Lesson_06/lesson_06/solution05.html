@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 05</title>
+</head>
+<body>
+    <h1>5. Зобразити рівнобедрений трикутник із символів ^. 
+        Висоту задає користувач. Наприклад, на екрані висота =5.</h1>
+        <div class="exercise__image">
+            <img class="exercise__img" src="./img/vlojennie-cikli-2.jpg" alt="Task image">
+        </div>
+
+        <script>
+            const symbol = "^"
+            const heightOfTheTriangle = parseInt(prompt("Enter height of triangle"))
+                for (let i = 0; i < heightOfTheTriangle; i++) {
+                        for (let j = heightOfTheTriangle; j > i; j--) {
+                            document.write("&nbsp")
+                        }
+                        for (let s = 0; s < i + 1; s++) {
+                            document.write(`${symbol}`)
+                        }
+                        document.write("<br>")
+                    }
+        </script>
+</body>
+</html>

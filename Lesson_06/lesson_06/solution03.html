@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 03</title>
+</head>
+
+<body>
+    <h1>6. Інвестор вклав S тис. грн на 20 років під 20% річних, податок складає 5% від суми прибутку. 
+        Визначити за
+        допомогою
+        циклів суму, яку він одержить.</h1>
+
+    <script>
+
+        const investment = 1000
+        const investmentPeriod = 20
+        const investmentPercentages = 0.2
+        const tax = 0.05
+        let sum = 0
+        for (let year = 0; year < 20; year++) {
+            let profitPerYear = investment * investmentPercentages
+            let taxPerYear = profitPerYear * tax
+            sum = sum + investment + profitPerYear - taxPerYear
+        }
+        document.write(`Sum for investment period = ${sum}грн`)
+
+    </script>
+</body>
+
+</html>
