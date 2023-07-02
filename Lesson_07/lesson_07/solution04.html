@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 04</title>
+</head>
+
+<body>
+    <h1>Задача 3. Створити окремі функції, які для 4 чисел знаходять:
+        <div>1)суму;</div>
+        <div>2)добуток;</div>
+        <div>3)середнє арифметичне;</div>
+        <div>4)мінімальне значення.</div>
+    </h1>
+
+    <script>
+
+        function getSumInRange(minNum, maxNum, numberCount) {
+            let sum = 0
+            for (let i = 0; i < numberCount; i++) {
+                let num = minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+                console.log(num);
+                sum += num
+            }
+            return sum
+        }
+
+        let sumres = getSumInRange(10, 100, 4)
+        document.write(`Sum = ${sumres}<br>`)
+
+        function getProductInRange(minNum, maxNum, numberCount) {
+            let prod
+            for (let i = 0; i < numberCount; i++) {
+                let num = minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+                console.log(num);
+                prod = prod ? prod * num : num
+            }
+            return prod
+        }
+
+        let prodRes = getProductInRange(1, 10, 4)
+        document.write(`Prod = ${prodRes}<br>`)
+
+        function getAverageInRange(minNum, maxNum, numberCount) {
+            let average = 0
+            for (let i = 0; i < numberCount; i++) {
+                let num = minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+                console.log(num);
+                average += num
+            }
+            return average / numberCount
+        }
+
+        let averageRes = getAverageInRange(1, 20, 4)
+        document.write(`Average = ${averageRes.toFixed(2)}<br>`)
+
+        function minNum(a, b, c, d) {
+            let min = a
+            if (b < min) min = b
+            if (c < min) min = c
+            if (d < min) min = d
+
+            return min
+        }
+
+        let minRes = minNum(25, 76, 2, 98)
+        document.write(`Min = ${minRes}`)
+
+    </script>
+</body>
+
+</html>

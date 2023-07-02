@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 06</title>
+</head>
+
+<body>
+    <h1>Задача 7. Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень
+        передаються у
+        функцію)
+    </h1>
+
+    <script>
+        function getRandomImagePath(imagePath) {
+            let randPath = Math.floor(Math.random() * 4)
+            return imagePath[randPath]
+        }
+
+        let imageList = ['https://thumbs.dreamstime.com/z/funny-sheep-portrait-showing-tongue-84066084.jpg',
+            'https://thumbs.dreamstime.com/z/funny-llama-12434396.jpg',
+            '    https://thumbs.dreamstime.com/z/funny-goat-19062606.jpg',
+            '    https://thumbs.dreamstime.com/z/funny-monkey-face-maranhao-brasil-30428227.jpg']
+        let imagePath = getRandomImagePath(imageList)
+        document.write(`<img src = '${imagePath}' width = "600"/>`)
+
+    </script>
+</body>
+
+</html>

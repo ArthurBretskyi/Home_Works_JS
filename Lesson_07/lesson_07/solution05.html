@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 05</title>
+</head>
+
+<body>
+    <h1>Задача 4. Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів:
+        <div>1)кількість парних</div>
+        <div>2)кількість додатних</div>
+        <div>3)кількість більших за 100</div>
+    </h1>
+
+    <script>
+        function getResults(minNum, maxNum, numberCount) {
+            let amountOfEvenNum = 0
+            let amountOfPosNum = 0
+            let amountOfGreaterThan100Num = 0
+
+
+            for (let i = 0; i < numberCount; i++) {
+                let num = minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+                console.log(num);
+                if (num % 2 === 0) amountOfEvenNum++
+                if (num >= 0) amountOfPosNum++
+                if (num > 100) amountOfGreaterThan100Num++
+            }
+
+            return [amountOfEvenNum, amountOfPosNum, amountOfGreaterThan100Num]
+
+        }
+        let res = getResults(-10, 200, 3)
+        document.write(`Amount of Even Num = ${res[0]}<br>Amount of Positive Num = ${res[1]}<br>Amount of Greater than 100 Num = ${res[2]}`)
+
+    </script>
+</body>
+
+</html>

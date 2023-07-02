@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 02</title>
+</head>
+
+<body>
+    <h1>Задача 1. Створити функцію, яка за номером місяця повертає його назву.</h1>
+    <script>
+        function getTheNameOfTheMonth() {
+            const numberOfMonth = parseInt(prompt("Enter the number of month"))
+            let result
+            if (numberOfMonth === 12)
+                result = "It is December"
+            else if (numberOfMonth === 01)
+                result = "It is January"
+            else if (numberOfMonth === 02)
+                result = "It is February"
+            else if (numberOfMonth === 03)
+                result = "It is March"
+            else if (numberOfMonth === 04)
+                result = "It is April"
+            else if (numberOfMonth === 05)
+                result = "It is May"
+            else if (numberOfMonth === 06)
+                result = "It is June"
+            else if (numberOfMonth === 07)
+                result = "It is July"
+            else if (numberOfMonth === 08)
+                result = "It is August"
+            else if (numberOfMonth === 09)
+                result = "It is September"
+            else if (numberOfMonth === 10)
+                result = "It is October"
+            else if (numberOfMonth === 11)
+                result = "It is November"
+            return result
+        }
+        document.write(getTheNameOfTheMonth())
+
+    </script>
+</body>
+
+</html>
