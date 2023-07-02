@@ -15,16 +15,29 @@
 
     <script>
 
-        function getMinValuesAmount(...tempValues) {
-            let minusTempNumb = 0
-            for (let i = 0; i < tempValues.length; i++) {
-                if (tempValues[i] < 0) {
-                    minusTempNumb++
+        // // function getMinValuesAmount(...tempValues) {
+        // //     let minusTempNumb = 0
+        // //     for (let i = 0; i < tempValues.length; i++) {
+        // //         if (tempValues[i] < 0) {
+        // //             minusTempNumb++
+        // //         }
+        // //     }
+        // //     return minusTempNumb
+        // // }
+        // document.write(getMinValuesAmount(12, 10, 23, -4, 2, -5, -8, 11, -7, -23))
+
+        function getMinValuesAmount(tempValues) {
+            let count = 0
+            for (const minusTempNumb of tempValues) {
+                if (minusTempNumb < 0) {
+                    count++
                 }
             }
-            return minusTempNumb
+            return count
         }
-        document.write(getMinValuesAmount(12, 10, 23, -4, 2, -5, -8, 11, -7, -23))
+        let tempValues = [12, 10, 23, -4, 2, -5, -8, 11, -7, -23]
+        let countMinTemp = getMinValuesAmount(tempValues)
+        document.write(countMinTemp)
 
     </script>
 </body>
