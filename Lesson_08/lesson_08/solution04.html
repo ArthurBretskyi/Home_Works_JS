@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 04</title>
+</head>
+
+<body>
+    <h1>Задача 5. Дано послідовність оцінок учня. Підрахувати кількість:</h1>
+    <ul>
+        <li>1) двійок</li>
+        <li>2) кількість хороших оцінок (добре, відмінно);</li>
+        <li>3) кількість оцінок, які нижче середнього.</li>
+    </ul>
+    <script>
+
+        function getRandScores(scores) {
+            const randScores =[]
+            for (let i = 0; i < scores.length; i++) {
+                const random = scores[Math.floor(Math.random() * scores.length)];
+                randScores.push(random)
+            }
+            return randScores
+        }
+
+        function getDeuceScore(scores) {
+
+            const deuce = 2
+            let repeatScores = 0
+
+            for (let i = 0; i < scores.length; i++) {
+                const random = scores[Math.floor(Math.random() * scores.length)];
+                randScores.push(random)
+                if (randScores[i] === deuce) {
+                    repeatScores += 1
+                }
+            }
+            return repeatScores
+        }
+
+        function getGoodScores(scores) {
+
+            const averageScore = 3
+            let repeatScores = 0
+
+            for (let i = 0; i < scores.length; i++) {
+                const random = scores[Math.floor(Math.random() * scores.length)];
+                randScores.push(random)
+                if (randScores[i] > averageScore) {
+                    repeatScores += 1
+                }
+            }
+            return repeatScores
+        }
+
+        function getBadScores(scores) {
+
+            const averageScore = 3
+            let repeatScores = 0
+
+            for (let i = 0; i < scores.length; i++) {
+                const random = scores[Math.floor(Math.random() * scores.length)];
+                randScores.push(random)
+                if (randScores[i] < averageScore) {
+                    repeatScores += 1
+                }
+            }
+            return repeatScores
+        }
+
+        const scores = [1, 2, 3, 4, 5]
+
+        let randScores = getRandScores(scores)
+        document.write(`Оцінки: ${randScores}<br>`)
+
+        let deuceScore = getDeuceScore(scores)
+        document.write(`Кількість двійок: ${deuceScore} <br>`)
+
+        let goodScores = getGoodScores(scores)
+        document.write(`Кількість хороших оцінок (добре, відмінно): ${goodScores} <br>`)
+
+        let badScores = getBadScores(scores)
+        document.write(`Кількість оцінок, які нижче середнього: ${badScores} <br>`)
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 03</title>
+</head>
+
+<body>
+    <h1>Задача 7. Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:</h1>
+    <ul>
+        <li>за весь рік;</li>
+        <li>у першій половині року;</li>
+        <li>у другій половині року;</li>
+        <li>за літо;</li>
+        <li>за ІІ квартал;</li>
+        <li>за парні місяці (з парними номерами);</li>
+        <li>за місяці, які є початковими у сезоні (весна, літо, осінь, зима).</li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <script>
+        function getMoneySum(year) {
+            for (let i = 0; i < year.length; i++) {
+                let ramdMoneyForMonthPerYear = Math.floor(Math.random() * 1000)
+                moneyForMonthPerYear.push(ramdMoneyForMonthPerYear)
+            }
+            return moneyForMonthPerYear
+        }
+
+        function getSumPerYear(year) {
+            let sum = 0
+            for (let i = 0; i < year.length; i++) {
+                sum += moneyForMonthPerYear[i]
+            }
+            return sum
+        }
+
+        function getSumPerFirstHalfYear(year) {
+            let sum = 0
+            for (let i = 0; i < 6; i++) {
+                sum += moneyForMonthPerYear[i]
+                // console.log(moneyForMonthPerYear[i]);
+            }
+            return sum
+        }
+
+        function getSumPerSecondHalfYear(year) {
+            let sum = 0
+            for (let i = 5; i <= 11; i++) {
+                sum += moneyForMonthPerYear[i]
+                // console.log(moneyForMonthPerYear[i]);
+            }
+            return sum
+        }
+
+        function getSumPerSummer(year) {
+            let sum = 0
+            for (let i = 5; i <= 7; i++) {
+                sum += moneyForMonthPerYear[i]
+            }
+            return sum
+        }
+
+        function getSumPerSecondQuarter(year) {
+            let sum = 0
+            for (let i = 3; i <= 5; i++) {
+                sum += moneyForMonthPerYear[i]
+                // console.log(moneyForMonthPerYear[i]);
+            }
+            return sum
+        }
+
+        function getSumPerEvenNumMonth(year) {
+            let sum = 0
+            for (let i = 1; i < year.length; i += 2) {
+                sum += moneyForMonthPerYear[i]
+                // console.log(moneyForMonthPerYear[i]);
+            }
+            return sum
+        }
+
+        function getSumPerFirstMonthOfSeasons(year) {
+            let sum = 0
+            for (let i = 2; i < year.length; i += 3) {
+                sum += moneyForMonthPerYear[i]
+                console.log(moneyForMonthPerYear[i]);
+            }
+            return sum
+        }
+
+        const year = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        let moneyForMonthPerYear = []
+
+        document.write(`Сума за кожен місяць протягом року: ${getMoneySum(year)}<br>`)
+
+        let SumPerYear = getSumPerYear
+        document.write(`Сума за весь рік: ${getSumPerYear(year)} <br>`)
+
+        let SumPerFirstHalf = getSumPerFirstHalfYear
+        document.write(`Сума у першій половині року: ${getSumPerFirstHalfYear(year)} <br>`)
+
+        let SumPerSecondHalfYear = getSumPerSecondHalfYear
+        document.write(`Сума у другій половині року: ${getSumPerSecondHalfYear(year)} <br>`)
+
+        let SumPerSummer = getSumPerSummer
+        document.write(`Сума за літо: ${getSumPerSummer(year)} <br>`)
+
+        let SumPerSecondQuarter = getSumPerSecondQuarter
+        document.write(`Сума за ІІ квартал: ${getSumPerSecondQuarter(year)} <br>`)
+
+        let SumPerEvenNumMonth = getSumPerEvenNumMonth
+        document.write(`Сума за парні місяці (з парними номерами): ${getSumPerEvenNumMonth(year)} <br>`)
+
+        let SumPerFirstMonthOfSeasons = getSumPerFirstMonthOfSeasons
+        document.write(`за місяці, які є початковими у сезоні (весна, літо, осінь, зима): ${getSumPerFirstMonthOfSeasons(year)} <br>`)
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 01</title>
+</head>
+
+<body>
+    <h1 class="exercise__text">Задача 2. Дано масив, який зберігає кількість відвідувачів магазину протягом тижня.
+        Вивести
+        на екран:</h1>
+    <ul>
+        <li>номери днів, протягом яких кількість відвідувачів була меншою за 20;</li>
+        <li>номери днів, коли кількість відвідувачів була мінімальною;</li>
+        <li>номери днів, коли кількість відвідувачів була мінімальною;</li>
+        <li>загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.</li>
+    </ul>
+    <br>
+    <br>
+    <br>
+
+
+    <script>
+
+        function getVisitorsDuringTheWeek(numberOfDays) {
+
+            for (let i = 0; i < numberOfDays.length; i++) {
+                let randNumberOfVisitors = Math.floor(Math.random() * 100)
+                numberOfVisitors.push(randNumberOfVisitors)
+            }
+            return numberOfVisitors
+        }
+
+        function getNumberOfDaysThatHadLessThan20Visitors(visitorsDuringTheWeek) {
+            let daysThatHadLessThan20Visitors = []
+            for (let i = 0; i < numberOfDays.length; i++) {
+                if (visitorsDuringTheWeek[i] < 20) {
+                    daysThatHadLessThan20Visitors.push(numberOfDays[i])
+                }
+
+            }
+            return daysThatHadLessThan20Visitors
+        }
+
+        function getNumberOfDaysThatHadMinNumOfVisitors(visitorsDuringTheWeek) {
+            let daysThatHadMinNumOfVisitors = []
+            let sum = 0
+            let average
+            for (let i = 0; i < numberOfDays.length; i++) {
+                sum += visitorsDuringTheWeek[i]
+                average = sum / numberOfDays[i]
+            }
+            let res = sum
+            let res2 = average
+            for (let i = 0; i < numberOfDays.length; i++) {
+                if (visitorsDuringTheWeek[i] < res2) {
+                    daysThatHadMinNumOfVisitors.push(numberOfDays[i])
+                }
+            }
+
+            return daysThatHadMinNumOfVisitors
+        }
+
+        function getNumberOfDaysThatHadMaxNumOfVisitors(visitorsDuringTheWeek) {
+            let daysThatHadMaxNumOfVisitors = []
+            let sum = 0
+            let average
+            for (let i = 0; i < numberOfDays.length; i++) {
+                sum += visitorsDuringTheWeek[i]
+                average = sum / numberOfDays[i]
+            }
+            let res = sum
+            let res2 = average
+            for (let i = 0; i < numberOfDays.length; i++) {
+                if (visitorsDuringTheWeek[i] > res2) {
+                    daysThatHadMaxNumOfVisitors.push(numberOfDays[i])
+                }
+            }
+
+            return daysThatHadMaxNumOfVisitors
+        }
+
+        function getSumOfVisitorsInWorkingDays(numberOfDays) {
+            let sumOfVisitorsInWorkingDays = 0
+            for (let i = 0; i <= 4; i++) {
+                sumOfVisitorsInWorkingDays += visitorsDuringTheWeek[i]
+                // console.log(numberOfVisitors[i]);
+            }
+            let res = sumOfVisitorsInWorkingDays
+
+            // console.log(res);
+            return sumOfVisitorsInWorkingDays
+        }
+
+        function getSumOfVisitorsInWeekEnd(numberOfDays) {
+            let sumOfVisitorsInWeekEnd = 0
+            for (let i = 5; i <= 6; i++) {
+                sumOfVisitorsInWeekEnd += visitorsDuringTheWeek[i]
+                // console.log(numberOfVisitors[i]);
+            }
+            let res = sumOfVisitorsInWeekEnd
+
+            // console.log(res);
+            return sumOfVisitorsInWeekEnd
+        }
+
+        const numberOfDays = [1, 2, 3, 4, 5, 6, 7]
+        let numberOfVisitors = []
+
+
+        let visitorsDuringTheWeek = getVisitorsDuringTheWeek(numberOfDays)
+        document.write(`Кількість відвідувачів магазину за кожен день тижня : ${visitorsDuringTheWeek}<br>`)
+
+        let daysThatHadLessThan20Visitors = getNumberOfDaysThatHadLessThan20Visitors(visitorsDuringTheWeek)
+        document.write(`Номери днів, протягом яких кількість відвідувачів була меншою за 20: ${daysThatHadLessThan20Visitors} <br>`)
+
+        let daysThatHadMinNumOfVisitors = getNumberOfDaysThatHadMinNumOfVisitors(visitorsDuringTheWeek)
+        document.write(`Номери днів, коли кількість відвідувачів була мінімальною(менше за середній показник за тиждень): ${getNumberOfDaysThatHadMinNumOfVisitors(numberOfVisitors)}<br>`)
+
+        let daysThatHadMiaxNumOfVisitors = getNumberOfDaysThatHadMaxNumOfVisitors(visitorsDuringTheWeek)
+        document.write(`Номери днів, коли кількість відвідувачів була максимальною(більше за середній показник за тиждень): ${getNumberOfDaysThatHadMaxNumOfVisitors(numberOfVisitors)}<br>`)
+
+        let SumOfVisitorsInWorkingDays = getSumOfVisitorsInWorkingDays(numberOfDays)
+        document.write(`Загальна кількість клієнтів у робочі дні: ${getSumOfVisitorsInWorkingDays(numberOfDays)}<br>`)
+
+        let SumOfVisitorsInWeekEnd = getSumOfVisitorsInWeekEnd(numberOfDays)
+        document.write(`Загальна кількість клієнтів у вихідні дні: ${getSumOfVisitorsInWeekEnd(numberOfDays)}`)
+    </script>
+</body>
+
+</html>

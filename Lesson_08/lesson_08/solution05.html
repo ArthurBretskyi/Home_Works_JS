@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 05</title>
+</head>
+
+<body>
+    <h1>Задача 4. Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :
+    </h1>
+    <ul>
+        <li>починаються на букву «А»;
+        </li>
+        <li>перша і остання літери співпадають;
+        </li>
+        <li>складаються з більше ніж 5 символів;
+        </li>
+    </ul>
+    <script>
+
+        function getNumOfCarNumberWithFirstLetterA(firstLetter, carNumbers) {
+            let numAmount = 0
+            for (let i = 0; i < carNumbers.length; i++) {
+                if (carNumbers[i][0] === firstLetter) {
+                    numAmount++
+                }
+            }
+            return numAmount
+        }
+
+        function getNumOfCarNumberWithSameFirstAndLastLetter(firstLetter, carNumbers) {
+            let numAmount = 0
+            for (let i = 0; i < carNumbers.length; i++) {
+                if (carNumbers[i][0] === carNumbers[i].slice(-1)) {
+                    numAmount++
+                }
+            }
+            return numAmount
+        }
+
+          function getNumOfCarNumberWithMoreThan5Letters(firstLetter, carNumbers) {
+                let numAmount = 0
+                for (let i = 0; i < carNumbers.length; i++) {
+                    if (carNumbers[i].length > 5) {
+                        numAmount++
+                    }
+                }
+                return numAmount
+            }
+
+        const firstLetter = "А"
+        carNumbers = ["АА1234АВ", "АА7635СА", "ВВ5643МВ", "НОМЕР", "БАНДЕРОМОБІЛЬ", "АА7689АР"]
+
+        document.write(`Номери: ${carNumbers}<br>`)
+
+        let carNumberWithFirstLetterA = getNumOfCarNumberWithFirstLetterA(firstLetter, carNumbers)
+        console.log(carNumbers);
+        document.write(`Кількість номерів, які починаються на букву «А»: ${carNumberWithFirstLetterA}<br>`)
+
+        let numOfCarNumberWithSameFirstAndLastLetter = getNumOfCarNumberWithSameFirstAndLastLetter(firstLetter, carNumbers)
+        document.write(`Кількість номерів, у яких перша і остання літери співпадають: ${numOfCarNumberWithSameFirstAndLastLetter}<br>`)
+
+        let numOfCarNumberWithMoreThan5Letters = getNumOfCarNumberWithMoreThan5Letters(firstLetter, carNumbers)
+            document.write(`Кількість номерів, у яких більше ніж 5 символів: ${numOfCarNumberWithMoreThan5Letters}<br>`)
+    </script>
+</body>
+
+</html>
