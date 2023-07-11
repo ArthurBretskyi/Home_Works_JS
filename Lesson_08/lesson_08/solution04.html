@@ -32,8 +32,7 @@
             let repeatScores = 0
 
             for (let i = 0; i < scores.length; i++) {
-                const random = scores[Math.floor(Math.random() * scores.length)];
-                randScores.push(random)
+                
                 if (randScores[i] === deuce) {
                     repeatScores += 1
                 }
@@ -47,8 +46,7 @@
             let repeatScores = 0
 
             for (let i = 0; i < scores.length; i++) {
-                const random = scores[Math.floor(Math.random() * scores.length)];
-                randScores.push(random)
+               
                 if (randScores[i] > averageScore) {
                     repeatScores += 1
                 }
@@ -62,8 +60,7 @@
             let repeatScores = 0
 
             for (let i = 0; i < scores.length; i++) {
-                const random = scores[Math.floor(Math.random() * scores.length)];
-                randScores.push(random)
+               
                 if (randScores[i] < averageScore) {
                     repeatScores += 1
                 }
