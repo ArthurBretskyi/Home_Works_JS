@@ -21,22 +21,24 @@
         //     }
         // }
 
-        let elementsAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const elementsAmount = [10]
+
         function getAmountOfElements(elementsAmount) {
 
-            for (let i = 0; i < elementsAmount.length; i++) {
+            let elementsArr = []
+
+            for (let i = 0; i < elementsAmount; i++) {
                 let randNumber = Math.floor(Math.random() * 150)
                 elementsArr.push(randNumber)
             }
             return elementsArr
         }
-        let elementsArr = []
-        console.log(elementsArr);
         let amountOfElements = getAmountOfElements(elementsAmount)
         document.write(`Масив елементів:${amountOfElements}<br>`)
 
         let res = []
-        for (let bigerThan100 of elementsArr) {
+        
+        for (let bigerThan100 of amountOfElements) {
             if (bigerThan100 > 100) {
                 res.push(bigerThan100)
             }
