@@ -90,7 +90,7 @@
         // ===================================================================================
 
         // 5)Підрахувати кількість змін цін
-        let numberOfPriceChanges = pricesForSecurities.reduce((prevPrice, price, index, pricesForSecurities) => pricesForSecurities[index] !== pricesForSecurities[index - 1] ? prevPrice + 1 : prevPrice, 0)
+        let numberOfPriceChanges = pricesForSecurities.reduce((prevPrice, price, index, pricesForSecurities) => price - pricesForSecurities[index - 1] !== 0 && index > 0 ? prevPrice + 1 : prevPrice, 0)
         document.write(`Кількість змін цін: ${numberOfPriceChanges}<br><br>`)
 
         // ===================================================================================
@@ -98,7 +98,6 @@
         // 6) Визначити, чи є ціна, що менше 1000
         let priceLessThan1000 = pricesForSecurities.some((price) => price < 1000)
         document.write(`Ціна яка менше за 1000: ${priceLessThan1000}<br><br>`)
-        // Тут якось коряво виходить, адже отримую тільки true or false (хоча цей метод тільки так і працює) 
         // ===================================================================================
 
         // 7) Визначати, чи усі ціни більше за 1000
