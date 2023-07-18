@@ -47,7 +47,12 @@
             return table
         }
         let tableArr = getRandTableArr(4, 4, 1, 20)
-        console.log(tableArr);
+
+        // console.log(tableArr);
+
+        document.write(`Масив :<br> ${tableArr.join('<br>')}<br>`)
+
+        //==================================================================================================
 
         let sum1 = 0
         for (let rowIndex = 0; rowIndex <= 1; rowIndex++) {
@@ -57,6 +62,8 @@
         }
         document.write(`Перша область - ${sum1}<br>`)
 
+        //==================================================================================================
+
         let sum2 = 0
         for (let rowIndex = 0; rowIndex <= 1; rowIndex++) {
             for (let columnIndex = 2; columnIndex <= 3; columnIndex++) {
@@ -65,6 +72,8 @@
         }
         document.write(`Друга область - ${sum2}<br>`)
 
+        //==================================================================================================
+
         let sum3 = 0
         for (let rowIndex = 2; rowIndex <= 3; rowIndex++) {
             for (let columnIndex = 0; columnIndex <= 1; columnIndex++) {
@@ -72,6 +81,8 @@
             }
         }
         document.write(`Третя область - ${sum3}<br>`)
+
+        //==================================================================================================
 
         let sum4 = 0
         for (let rowIndex = 2; rowIndex <= 3; rowIndex++) {
