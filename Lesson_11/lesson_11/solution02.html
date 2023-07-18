@@ -49,51 +49,79 @@
 
         //==================================================================================================
 
-        let sumTotal = 0
-        for (let w = 0; w < shopsIncomeTableArr.length; w++) {
-            for (let d = 0; d < shopsIncomeTableArr[w].length; d++) {
-                sumTotal += shopsIncomeTableArr[w][d]
+        function getIncomePerWeek(shopsIncomeTableArr) {
+
+            let totalSumPerWeek = []
+            for (let w = 0; w < shopsIncomeTableArr.length; w++) {
+                let sumTotal = 0
+                for (let d = 0; d < shopsIncomeTableArr[w].length; d++) {
+                    sumTotal += shopsIncomeTableArr[w][d]
+                }
+                totalSumPerWeek.push(sumTotal)
             }
+            return totalSumPerWeek
         }
-        document.write(`Загальний прибуток кожного магазину за тиждень: ${sumTotal}<br>`)
+        let incomePerWeek = getIncomePerWeek(shopsIncomeTableArr)
+        document.write(`Загальний прибуток кожного магазину за тиждень: ${incomePerWeek}<br>`)
 
         //==================================================================================================
 
-        let sumWorkingDays = 0
-        const workingDays = 5
-        for (let w = 0; w < shopsIncomeTableArr.length; w++) {
-            for (let d = 0; d < workingDays; d++) {
-                sumWorkingDays += shopsIncomeTableArr[w][d]
+        function getIncomeForWorkingDays(shopsIncomeTableArr) {
+            let sumWorkingDaysArr = []
+            const workingDays = 5
+            for (let w = 0; w < shopsIncomeTableArr.length; w++) {
+                let sumWorkingDays = 0
+                for (let d = 0; d < workingDays; d++) {
+                    sumWorkingDays += shopsIncomeTableArr[w][d]
+                }
+                sumWorkingDaysArr.push(sumWorkingDays)
             }
+            return sumWorkingDaysArr
         }
-        document.write(`Загальний прибуток за робочі дні: ${sumWorkingDays}<br>`)
+        let incomeForWorkingDays = getIncomeForWorkingDays(shopsIncomeTableArr)
+        document.write(`Загальний прибуток за робочі дні: ${incomeForWorkingDays}<br>`)
 
         //==================================================================================================
 
-        let sumWeekend = 0
-        for (let w = 0; w < shopsIncomeTableArr.length; w++) {
-            for (let d = 5; d <= 6; d++) {
-                sumWeekend += shopsIncomeTableArr[w][d]
+        function getIncomeForWeekend(shopsIncomeTableArr) {
+            let sumWeekendArr = []
+            for (let w = 0; w < shopsIncomeTableArr.length; w++) {
+                let sumWeekend = 0
+                for (let d = 5; d <= 6; d++) {
+                    sumWeekend += shopsIncomeTableArr[w][d]
+                }
+                sumWeekendArr.push(sumWeekend)
             }
+            return sumWeekendArr
         }
-        document.write(`Загальний прибуток за вихідні дні: ${sumWeekend}<br>`)
+        let incomeForWeekend = getIncomeForWeekend(shopsIncomeTableArr)
+        document.write(`Загальний прибуток за вихідні дні: ${incomeForWeekend}<br>`)
 
         //==================================================================================================
 
-        let maxIncomeForeWednesday = 0
-        for (let w = 0; w < shopsIncomeTableArr.length; w++) {
-            for (let d = 0; d < shopsIncomeTableArr[w].length; d++) {
-                if (maxIncomeForeWednesday < shopsIncomeTableArr[w][2]) {
-                    maxIncomeForeWednesday = shopsIncomeTableArr[w][2]
+        function getMaxIncomeForeWednesday(shopsIncomeTableArr) {
+            let maxIncomeForeWednesday = 0
+
+            for (let w = 0; w < shopsIncomeTableArr.length; w++) {
+                for (let d = 0; d < shopsIncomeTableArr[w].length; d++) {
+                    if (maxIncomeForeWednesday < shopsIncomeTableArr[w][2]) {
+                        maxIncomeForeWednesday = shopsIncomeTableArr[w][2]
+                    }
                 }
             }
+            return maxIncomeForeWednesday
         }
-        document.write(`Максимальний прибуток за середу: ${maxIncomeForeWednesday}<br>`)
+
+        let maxWednesdayIncome = getMaxIncomeForeWednesday(shopsIncomeTableArr)
+        document.write(`Максимальний прибуток за середу: ${maxWednesdayIncome}<br>`)
 
         //==================================================================================================
-
-        let icomeBiggerYhan200 = shopsIncomeTableArr.flat(Infinity).filter((el) => el > 200)
-        document.write(`Прибуток більший за 200: ${icomeBiggerYhan200}<br>`)
+function geticomeBiggerYhan200(shopsIncomeTableArr) {
+ let icomeBiggerYhan200 = shopsIncomeTableArr.flat(Infinity).filter((el) => el > 200)
+ return  icomeBiggerYhan200  
+}
+        
+        document.write(`Прибуток більший за 200: ${geticomeBiggerYhan200(shopsIncomeTableArr)}<br>`)
     </script>
 </body>
 
