@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 05</title>
+</head>
+
+<body>
+    <h1>Задача 5. Тренажер додавання.
+        Кожні 10 секунд користувачу задають
+        випадковий приклад з додавання двох цифр і робиться
+        перевірка.</h1>
+
+    <script>
+
+        let intervalId = setInterval(() => {
+            let firstNum = 1 + Math.floor(Math.random() * 10)
+            let secondNum = 1 + Math.floor(Math.random() * 10)
+            let exercise = firstNum + secondNum
+            let userAnswer = parseInt(prompt(`Який результат виразу ${firstNum} + ${secondNum}`))
+            if (userAnswer === exercise) alert('Correct')
+            else alert('Incorrect')
+        }, 2000)
+        setTimeout(() =>
+            clearInterval(intervalId)
+            , 20000);
+
+    </script>
+
+</body>
+
+</html>
