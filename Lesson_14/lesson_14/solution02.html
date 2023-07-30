@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 02</title>
+</head>
+
+<body>
+    <h1>Задача 2. Розробити функцію, у яку передають об’єкт (день, місяць, рік). Визначити, який буде рік через N
+        місяців.</h1>
+
+    <script>
+
+        let userDate = {
+            day: 29,
+            month: 7,
+            year: 2023,
+        }
+
+        document.write(`Day: ${userDate.day}<br>Month: ${userDate.month}<br>Year: ${userDate.year}<br><br>`)
+
+        function getTargetYear({ month, year }, monthAmount) {
+            return year + Math.floor((month - 1 + monthAmount) / 12)
+        }
+        const monthAmount = 1 + Math.floor(Math.random() * 36)
+        // document.write(monthAmount)
+        let targetYear = getTargetYear(userDate, monthAmount)
+        document.write(`Через ${monthAmount} місяців буде ${targetYear} рік`)
+
+    </script>
+</body>
+
+</html>
