@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette/Predictor</title>
+</head>
+
+<body>
+    <p>// Приклад. Гра «Рулетка»
+        // ----- Властивості -------
+        // кількість полів рулетки
+        // мінімальне значення балів
+        // максимальне значення балів
+        // список згенерованих значень
+
+        // ----- Методи ----------
+        // генерування полів рулетки
+        // виведення списку згенерованих значень
+        // приведення до рядка
+        // крутити рулетку (отримання випадкового балу)
+        // метод гри (користувач крутить рулетку поки не відмовиться)
+        // поки користувач хоче крутити
+        // визначаємо рандомне значення рулетки
+        // додаємо до загальної суми
+        // повідомляємо користувача про результат та загальну кількість балів</p>
+
+    <script>
+        // function Roulette(cellsNum, minScore, maxScore) {
+
+        //     //---- властивості - характеристики (у кожного свої)
+
+        //     this.cellsNum = cellsNum
+        //     this.minScore = minScore
+        //     this.maxScore = maxScore
+        //     this.gameField = this.generateGameField()
+        // }
+
+        // // ----- Методи (спільні для всіх)----------
+
+        // Roulette.prototype.getRandomNumber = function (minValue, maxValue) {
+        //     minValue ??= this.minScore
+        //     maxValue ??= this.maxScore
+        //     return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+        // }
+        // // генерування полів рулетки
+        // Roulette.prototype.generateGameField = function (params) {
+        //     let gameField = []
+        //     for (let i = 0; i < this.cellsNum; i++) {
+        //         let randScore = this.getRandomNumber()
+        //         gameField.push(randScore)
+        //     }
+        //     return gameField
+        // }
+        // // виведення списку згенерованих значень
+        // Roulette.prototype.showGameField = function () {
+        //     document.write(this.gameField)
+        // }
+
+        // // приведення до рядка
+        // Roulette.prototype.toSring = function () {
+        //     return `Roulette: ${this.minScore} - ${this.maxScore}`
+        // }
+
+        // // крутити рулетку (отримання випадкового балу)
+        // Roulette.prototype.getRandScore = function () {
+        //     let randScoreIndex = this.getRandomNumber(0, this.cellsNum)
+        //     return this.gameField[randScoreIndex]
+        // }
+
+        // // метод гри (користувач крутить рулетку поки не відмовиться)
+        // // поки користувач хоче крутити
+        // // визначаємо рандомне значення рулетки
+        // // додаємо до загальної суми
+        // // повідомляємо користувача про результат та загальну кількість балів
+        // Roulette.prototype.playGame = function () {
+        //     let totalSum = 0
+        //     while (confirm("Do you want to play?")) {
+        //         const randScore = this.getRandScore()
+        //         totalSum += randScore
+        //         alert(`Score: ${randScore}     Total: ${totalSum}`)
+        //     }
+        // }
+
+        // let roulette1 = new Roulette(20, -100, 100)
+        // roulette1.playGame()
+        // roulette1.showGameField()
+
+        class Roulette {
+            constructor(cellsNum, minScore, maxScore) {
+                this.cellsNum = cellsNum
+                this.minScore = minScore
+                this.maxScore = maxScore
+                this.gameField = this.generateGameField()
+            }
+            getRandomNumber(minValue, maxValue) {
+                minValue ??= this.minScore
+                maxValue ??= this.maxScore
+                return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+            }
+            // генерування полів рулетки
+            generateGameField() {
+                let gameField = []
+                for (let i = 0; i < this.cellsNum; i++) {
+                    let randScore = this.getRandomNumber()
+                    gameField.push(randScore)
+                }
+                return gameField
+            }
+            // виведення списку згенерованих значень
+            showGameField() {
+                document.write(this.gameField)
+            }
+            // приведення до рядка
+            toSring() {
+                return `Roulette: ${this.minScore} - ${this.maxScore}`
+            }
+            // крутити рулетку (отримання випадкового балу)
+            getRandScore() {
+                let randScoreIndex = this.getRandomNumber(0, this.cellsNum)
+                return this.gameField[randScoreIndex]
+            }
+            // метод гри (користувач крутить рулетку поки не відмовиться)
+            // поки користувач хоче крутити
+            // визначаємо рандомне значення рулетки
+            // додаємо до загальної суми
+            // повідомляємо користувача про результат та загальну кількість балів
+            playGame() {
+                let totalSum = 0
+                while (confirm("Do you want to play?")) {
+                    const randScore = this.getRandScore()
+                    totalSum += randScore
+                    alert(`Score: ${randScore}     Total: ${totalSum}`)
+                }
+            }
+        }
+        let roulette1 = new Roulette(20, -100, 100)
+        roulette1.playGame()
+        roulette1.showGameField()
+    </script>
+</body>
+
+</html>

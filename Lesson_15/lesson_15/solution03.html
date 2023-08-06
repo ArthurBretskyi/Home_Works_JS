@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 03</title>
+</head>
+
+<body>
+    <h1>Задача 3. Розробити клас MultChecker для перевірки таблиці множення
+        Поля
+        Число, яке перевіряємо (наприклад, перевірка частини таблиці множення на 7)
+        Кількість правильних відповідей
+        Кількість неправильних відповідей
+        Методи
+        Генерування прикладу (метод випадковим чином визначає друге число, перше число фіксоване)
+        Перевірка правильності вказаної відповіді
+        render
+    </h1>
+
+    <script>
+
+        class MultChecker {
+                checkNum;
+                correctAnswersNum;
+                incorrectAnswersNum;
+                userAnswer;
+                randSecondNum;
+
+                constructor(checkNum) {
+                    this.checkNum = checkNum
+                    this.correctAnswersNum = 0
+                    this.incorrectAnswersNum = 0
+                }
+
+                run() {
+                    this.getTask()
+                    this.checkingAnswer()
+                    this.nextStep()
+                }
+
+                getTask() {
+                    this.randSecondNum = Math.floor(Math.random() * 10)
+                    this.userAnswer = parseInt(prompt(`Скільки буде ${this.checkNum} * ${this.randSecondNum}`))
+                }
+
+                checkingAnswer() {
+                    if (this.userAnswer === this.checkNum * this.randSecondNum) this.correctAnswersNum++
+                    else this.incorrectAnswersNum++
+                }
+
+                nextStep() {
+                    this.getTask()
+                    if (this.validate()) {
+                        this.checkingAnswer()
+                        this.nextStep()
+                    } else {
+                        document.write(`Кількість правильних відповідей: ${this.correctAnswersNum};<br> Кількість не правильних відповідей: ${this.incorrectAnswersNum}`)
+                    }
+                }
+
+                validate() {
+                    return this.userAnswer || this.userAnswer === 0
+                }
+
+            }
+
+            let userAnswerForCheckNum = parseInt(prompt("Оберіть число для перевірки Вашиx знань з множення"))
+            let prodChecker = new MultChecker(userAnswerForCheckNum)
+
+            prodChecker.run()
+    </script>
+</body>
+
+</html>

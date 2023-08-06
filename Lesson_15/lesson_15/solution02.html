@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 02</title>
+</head>
+
+<body>
+    <h1>Задача 2. Створити об’єкт «Авто».
+        Авто
+
+        Поля(властивості)
+        Марка
+        Розмір бака
+        Кількість наявних літрів
+        Кількість місць
+        Кількість пасажирів
+
+        Методи (дії)
+        Заправка на вказану кількість літрів
+        Виведення кількості пасажирів
+        Додавання пасажирів
+        Висадка пасажирів
+    </h1>
+
+    <script>
+
+        class Auto {
+            constructor(brand, tankSize, numberOfAviableLiters, numberOfSeats, numberOfPassengers) {
+                this.brand = brand
+                this.tankSize = tankSize
+                this.numberOfAviableLiters = numberOfAviableLiters
+                this.numberOfSeats = numberOfSeats
+                this.numberOfPassengers = numberOfPassengers
+            }
+
+            // Методи (дії)
+
+            //Заправка на вказану кількість літрів
+            getDiverRefuel() {
+                let toFullTank = this.tankSize - this.numberOfAviableLiters
+                let driverOrder = prompt("На скільки літрів вам заправити бак?")
+                if (driverOrder <= this.tankSize - this.numberOfAviableLiters) return alert("Ok")
+                else alert("Забагато")
+            }
+
+            //Виведення кількості пасажирів
+            showPassengersInStartOfRoute() {
+                document.write(`Кількість пасажирів в авто на початку маршрута: ${this.numberOfPassengers}<br>`)
+            }
+
+            // Додавання пасажирів
+            determinefreePlacesForPassengers() {
+                let passengersForEnter = parseInt(prompt("Скільки пасажирів на посадку"))
+                if (passengersForEnter <= this.numberOfSeats - this.numberOfPassengers) return alert("Займайте свої місця")
+                else alert(`Вільних місць тільки: ${this.numberOfSeats - this.numberOfPassengers}`)
+            }
+
+            //Висадка пасажирів
+            determinePassengersForExit() {
+                while (this.numberOfPassengers !== 0) {
+                    this.numberOfPassengers -= 1
+                    alert(`Висадка пасажирів: ${this.numberOfPassengers}`)
+                }
+            }
+
+             showPassengersInEndOfRoute() {
+                document.write(`Кількість пасажирів в авто в кінці маршрута: ${this.numberOfPassengers}`)
+            }
+        }
+        let auto1 = new Auto("Toyota", 80, 40, 20, 8)
+        // auto1.getDiverRefuel()
+        auto1.showPassengersInStartOfRoute()
+        auto1.determinefreePlacesForPassengers()
+        auto1.determinePassengersForExit()
+        auto1.showPassengersInEndOfRoute()
+
+
+    </script>
+</body>
+
+</html>

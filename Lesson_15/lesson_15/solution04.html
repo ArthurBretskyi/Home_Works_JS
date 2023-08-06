@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 04</title>
+</head>
+
+<body>
+    <h1>Задача 4. Розробити клас Baner
+        Поля
+        Масив об’єктів ( графічних зображень та посилань на сайти)
+
+        методи
+        Метод випадкового вибору об’єкта (графічного зображення та посилання)
+        Метод виведення випадкового банера
+    </h1>
+    <script>
+        const imagesArray = [
+            {
+                img: '../lesson_15/image/img01.jpg',
+                link: 'https://uk.javascript.info/object',
+            },
+            {
+                img: '../lesson_15/image/img02.jpg',
+                link: 'https://uk.javascript.info/object-copy',
+            },
+            {
+                img: '../lesson_15/image/img03.jpg',
+                link: 'https://uk.javascript.info/garbage-collection',
+            },
+            {
+                img: '../lesson_15/image/img04.jpg',
+                link: 'https://uk.javascript.info/object-methods',
+            },
+        ]
+        class Baner {
+            constructor(imagesArray) {
+                this.imagesArray = imagesArray
+            }
+            getRandomBaner() {
+                let randomBaner = Math.floor(Math.random() * this.imagesArray.length)
+                return this.imagesArray[randomBaner]
+            }
+            print() {
+               let printRandomBaner = this.getRandomBaner()
+                document.write(`
+                    <img src="${printRandomBaner.img}" alt="Image"><br>
+                    <a href="${printRandomBaner.link}">Link to read more</a>
+                    `)
+            }
+          
+        }
+        let printRandObj = new Baner(imagesArray)
+        printRandObj.print()
+    </script>
+</body>
+
+</html>

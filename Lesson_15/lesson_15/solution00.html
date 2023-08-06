@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 00</title>
+</head>
+
+<body>
+    <h1>Задача 0. Дано два об’єкта. Обидва містять масив цілих чисел. При цьому у одному з них є функція знаходження
+        суми, а у
+        іншому – функція для знаходження добутку тих, які знаходяться між заданими мінімальним і максимальних значенням.
+        Використати обидва методи стосовно обидвох об’єктів (використати call, apply)
+    </h1>
+
+    <script>
+
+        let firstObj = {
+
+            numArr: [12, 45, 87, 89, 43, 6, 15, 90],
+
+            getSum: function () {
+                return this.numArr.reduce((prevSum, num) => prevSum += num, 0)
+            },
+
+            toString: function () {
+                return `Масив чисел: ${this.numArr}`
+            },
+        }
+
+
+
+        let secondObj = {
+
+            numArr: [4, 76, 9, 94, 34, 12, 87, 56, 98],
+
+            getProd: function (minValue, maxValue) {
+                return this.numArr.reduce((prevSum, num) => num > minValue && num < maxValue ? prevSum * num : prevSum, 1)
+            },
+
+            toString: function () {
+                return `Масив чисел: ${this.numArr}`
+            },
+
+        }
+        document.write(`${firstObj}<br>`)
+        let sumForFirstObj = firstObj.getSum()
+        document.write(`Сума чисел: ${sumForFirstObj}<br>`)
+        document.write(`${secondObj}<br>`)
+        let prodForSecondObj = secondObj.getProd(1, 20)
+        document.write(`Добуток тих чисел, які знаходяться між 1 та 20: ${prodForSecondObj}<br><br>`)
+
+        let sumForSecondObj = firstObj.getSum.call(secondObj)
+        document.write(`Сума чисел для другого масиву :${sumForSecondObj}<br>`)
+        let prodForFirstObj = secondObj.getProd.call(firstObj, 1, 20)
+        document.write(`Добуток тих чисел, які знаходяться між 1 та 20 для першого масиву:${prodForFirstObj}<br>`)
+    </script>
+</body>
+
+</html>

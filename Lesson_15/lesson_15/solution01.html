@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 01</title>
+</head>
+
+<body>
+    <h1>Задача 1. Створити об’єкт «Тир». У масиві зберігаються 1, якщо у цьому квадраті є заєць і 0 в іншому випадку.
+        Тир
+
+
+        Поля(властивості)
+        Масив, у якому зберігається поле з зайцями
+        Методи (дії)
+        Метод пострілу (задається позиція пострілу)
+        Виведення ігрового поля
+    </h1>
+
+    <script>
+
+        class ShootingGallery {
+            constructor(cellsNum, hareOff, hareIn) {
+                this.cellsNum = cellsNum
+                this.hareIn = hareIn
+                this.hareOff = hareOff
+                this.gameFieald = this.getRandHareInGameField()
+            }
+
+            // генеруємо масив з рандомними зайцями
+            getRandHareInGameField(hareOff, hareIn) {
+                let gameFieald = []
+                for (let i = 0; i < this.cellsNum; i++) {
+                    const randHare = this.hareOff + Math.floor(Math.random() * (this.hareIn - this.hareOff + 1))
+                    gameFieald.push(randHare)
+                }
+                return gameFieald
+            }
+
+            // виведення списку згенерованих значень gameFieald
+            showGameField(){
+                document.write(this.gameFieald)
+            }
+
+            // Постріл
+            shot(){
+                let userShot = prompt("Здійсніть постріл по цілі з 0 по 19")
+                if (this.gameFieald[userShot] === 1) return alert("Ви поцілили")
+                else  alert("Ви промазали")
+            }
+        }
+        let tir = new ShootingGallery(20, 0, 1)
+        tir.showGameField()
+        tir.shot()
+    </script>
+</body>
+
+</html>
