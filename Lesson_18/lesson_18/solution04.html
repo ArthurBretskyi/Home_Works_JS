@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 04</title>
+</head>
+
+<body>
+    <h1 class="title">Задача 4. Наперед задано у скрипті масив зі списком бажань. Після завантаження сторінки випадковим
+        чином вибираються 3 і
+        відображаються у окремих div (їх треба створити і додати на сторінку)</h1>
+    <script>
+        const wishesArr = ["Хочу щоб вся русня повиздихала", "Хочу щоб в Україні не було корупції", "Хочу щоб мій кіт перестав дуріти по ночах", "Хочу щоб Ерік вивчив англійську мову", "Хочу вивчити норвежську мову", "Хочу власну пивоварню"]
+
+        function getRandWish(wishesArr) {
+           
+            for (let i = 0; i < 3; i++) {
+                const randWish = Math.floor(Math.random() * wishesArr.length);
+                const divEl = document.createElement('div')
+                divEl.innerHTML = `${wishesArr[randWish]}`
+                document.body.append(divEl)
+            }
+        }
+        getRandWish(wishesArr)
+    </script>
+</body>
+
+</html>

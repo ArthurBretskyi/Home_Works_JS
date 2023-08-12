@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/solution01.css">
+    <title>Solution 01</title>
+</head>
+
+<body>
+    <h1 class="title">Задача 1. Розробити калькулятор</h1>
+    <div class="calc">
+        <label>
+            First number
+            <input class="inp" id="first" type="number" placeholder="Type first number here" value="0">
+        </label>
+        <label>
+            Second number
+            <input class="inp" id="second" type="number" placeholder="Type first number here" value="0">
+        </label>
+        <div class="container">
+            <div id="sum">
+                <button class="btn">+</button>
+            </div>
+            <div id="sub">
+                <button class="btn">-</button>
+            </div>
+            <div id="mult">
+                <button class="btn">*</button>
+            </div>
+            <div id="div">
+                <button class="btn">/</button>
+            </div>
+        </div>
+        <label>
+            Result
+            <input class="inp" id="result" type="number" placeholder="Result">
+        </label>
+    </div>
+    <script>
+        function getSum() {
+            const firstNum = parseInt(document.getElementById("first").value)
+            const secondNum = parseInt(document.getElementById("second").value)
+            const sum = firstNum + secondNum
+            document.getElementById('result').value = sum
+        }
+
+        function getSub() {
+            const firstNum = parseInt(document.getElementById("first").value)
+            const secondNum = parseInt(document.getElementById("second").value)
+            const sub = firstNum - secondNum
+            document.getElementById('result').value = sub
+        }
+
+        function getMult() {
+            const firstNum = parseInt(document.getElementById("first").value)
+            const secondNum = parseInt(document.getElementById("second").value)
+            const mult = firstNum * secondNum
+            document.getElementById('result').value = mult
+        }
+        function getDiv() {
+            const firstNum = parseInt(document.getElementById("first").value)
+            const secondNum = parseInt(document.getElementById("second").value)
+            const div = firstNum / secondNum
+            document.getElementById('result').value = div
+        }
+
+            document.getElementById("sum").onclick = getSum
+            document.getElementById("sub").onclick = getSub
+            document.getElementById("mult").onclick = getMult
+            document.getElementById("div").onclick = getDiv
+  
+    </script>
+</body>
+
+</html>

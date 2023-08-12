@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/solution07.css">
+    <title>Solution 07</title>
+</head>
+
+<body>
+    <h1 class="title">Задача 7. Подорож складається з 3 етапів. На кожному етапі користувач може вибрати один з видів
+        транспорту (авто,
+        автобус, літак - випадаючий список), харчування (сніданок, обід, вечеря – checkbоx) та одного з 3-х
+        гідів(використати -
+        radio buttons). Ціни визначте самі. Підрахувати загальну вартість.</h1>
+    <div class="container">
+        <h2 class="sub_title">Київ-Львів-Ужгород-Київ</h2>
+        <div class="stages">
+            <h2>Оберіть складові першого етапу подорожі(Київ-Львів)</h2>
+            <h3>Транспорт</h3>
+            <div class="transport_container">
+                <select class="transport">
+                    <option value="200">авто</option>
+                    <option value="300">автобус</option>
+                    <option value="600">літак</option>
+                </select>
+            </div>
+            <h3>Харчування</h3>
+            <div class="food_container">
+                <label>Сніданок
+                    <input type="checkbox" value="100">
+                </label>
+                <label>Обід
+                    <input type="checkbox" value="150">
+                </label>
+                <label>Вечеря
+                    <input type="checkbox" value="200">
+                </label>
+            </div>
+            <h3>Гід</h3>
+            <div class="guide_container">
+                <label>Павло<img class="image" src="./img/p2.jpg" alt="image">
+                    <input type="radio" value="300">
+                </label>
+                <label>Катерина<img class="image" src="./img/p1.jpg" alt="image">
+                    <input type="radio" value="300">
+                </label>
+                <label>Артур<img class="image" src="./img/p3.jpg" alt="image">
+                    <input type="radio" value="300">
+                </label>
+            </div>
+        </div>
+        <div class="stages">
+            <h2>Оберіть складові другого етапу подорожі(Львів-Ужгород)</h2>
+            <h3>Транспорт</h3>
+            <div class="transport_container">
+                <select class="transport">
+                    <option value="200">авто</option>
+                    <option value="300">автобус</option>
+                    <option value="600">літак</option>
+                </select>
+            </div>
+            <h3>Харчування</h3>
+            <div class="food_container">
+                <label>Сніданок
+                    <input type="checkbox" value="100">
+                </label>
+                <label>Обід
+                    <input type="checkbox" value="150">
+                </label>
+                <label>Вечеря
+                    <input type="checkbox" value="200">
+                </label>
+            </div>
+            <h3>Гід</h3>
+            <div class="guide_container">
+                <label>Павло<img class="image" src="./img/p2.jpg" alt="image">
+                    <input type="radio" value="300">
+                </label>
+                <label>Катерина<img class="image" src="./img/p1.jpg" alt="image">
+                    <input type="radio" value="300">
+                </label>
+                <label>Артур<img class="image" src="./img/p3.jpg" alt="image">
+                    <input type="radio" value="300">
+                </label>
+            </div>
+        </div>
+        <div class="stages">
+            <h2>Оберіть складові третього етапу подорожі(Ужгород-Київ)</h2>
+            <h3>Транспорт</h3>
+            <div class="transport_container">
+                <select class="transport">
+                    <option value="200">авто</option>
+                    <option value="300">автобус</option>
+                    <option value="600">літак</option>
+                </select>
+            </div>
+            <h3>Харчування</h3>
+            <div class="food_container">
+                <label>Сніданок
+                    <input type="checkbox" value="100">
+                </label>
+                <label>Обід
+                    <input type="checkbox" value="150">
+                </label>
+                <label>Вечеря
+                    <input type="checkbox" value="200">
+                </label>
+            </div>
+            <h3>Гід</h3>
+            <div class="guide_container">
+                <label>Павло<img class="image" src="./img/p2.jpg" alt="image">
+                    <input type="radio" value="300">
+                </label>
+                <label>Катерина<img class="image" src="./img/p1.jpg" alt="image">
+                    <input type="radio" value="300">
+                </label>
+                <label>Артур<img class="image" src="./img/p3.jpg" alt="image">
+                    <input type="radio" value="300">
+                </label>
+            </div>
+        </div>
+        <div id="get_price">
+            <button class="btn">Get price</button>
+        </div>
+        <div id="res"></div>
+    </div>
+    <script>
+        function getTotalPrice() {
+            const transportList = parseInt(document.querySelector('select').value)
+            const inputList = document.querySelectorAll('input')
+            let sum = 0
+            for (const inp of inputList) {
+                if (inp.checked) sum += parseInt(inp.value)
+            }
+            let totalSum = sum + transportList
+            document.getElementById('res').innerText = totalSum.toFixed(2)
+        }
+
+        document.getElementById('get_price').onclick = getTotalPrice
+    </script>
+</body>
+
+</html>

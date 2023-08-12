@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/solution03.css">
+    <title>Solution 03</title>
+</head>
+
+<body>
+    <h1 class="title">Задача 3. Користувач задає рік народження. Визначити кількість років користувача.</h1>
+    <div class="container">
+        <div class="form__line">
+            <label class="label" for="age">Введіть ваш рік народження</label>
+            <input class="inp" id="age" autocomplete="off" placeholder="Введіть ваш рік народження" name="age"
+                type="text">
+        </div>
+        <div id="button">
+            <button class="btn">PUSH</button>
+        </div>
+        <div class="result">Кількість років: <span id="res"> </span></div>
+    </div>
+    <script>
+        function getAge() {
+            const currentYear = 2023
+            const userYearOfBirthday = parseInt(document.getElementById('age').value)
+            const yearOfBirthday = currentYear - userYearOfBirthday
+            document.getElementById('res').innerText = yearOfBirthday
+        }
+        document.getElementById('button').onclick = getAge
+    </script>
+</body>
+
+</html>

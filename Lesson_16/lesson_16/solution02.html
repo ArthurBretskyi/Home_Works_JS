@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution 02</title>
+</head>
+
+<body>
+    <h1>Задача 2. Створити клас TMoney для роботи з грошовими сумами. Сума повинна зберігатися у вигляді доларового
+        еквіваленту.
+        Реалізувати методи додавання/вилучення грошової маси, вказуючи необхідну суму у гривнях, та визначення курсу
+        долара, при
+        якому сума у гривнях збільшиться на 100. Курс долара зберігати в окремому полі.
+    </h1>
+    <script>
+        //--- Властивості
+        // сума в доларах
+        // курс долара
+        //--- Методи1
+        // додвання суми
+        // вилучення суми
+        // курсу долара, при якому сума у гривнях збільшиться на 100
+        class TMoney {
+            #moneyBalanceInDollars
+            #dollarRate = 36
+            constructor(grnBalance) {
+                this.Balance = grnBalance
+            }
+            // властивість яка повертає кількість грошей, автоматично помноживши на курс долара
+            get Balance() {
+                return this.#moneyBalanceInDollars * this.#dollarRate
+            }
+            set Balance(grnSum) {
+                if (grnSum < 0)
+                    throw new Error("Помилка. Початкова сума не може бути меншою за нуль")
+                this.#moneyBalanceInDollars = grnSum / this.#dollarRate
+            }
+            get DollarRate() {
+                return this.#dollarRate
+            }
+            set DollarRate(rateValue) {
+                if (rateValue !== this.#dollarRate)
+                    throw new Error("Помилка. Не вірний курс долара")
+                this.#dollarRate = rateValue
+            }
+            //--- Методи1
+            addMoney(grnSum) {
+                this.Balance += grnSum
+                return this.Balance
+            }
+            withdrawalMoney(grnSum) {
+                if (grnSum > this.Balance)
+                    throw new Error("Помилка. Не достатньо коштів на рахунку(")
+                this.Balance -= grnSum
+                return this.Balance
+            }
+            getDollarRateWhenGrnRatePlus100() {
+                return (this.Balance + 100) / this.#dollarRate
+            }
+            run() {
+                let add = this.addMoney(grnSum)
+                let withdrawal = this.withdrawalMoney(grnSum)
+                let dollarRateWhenGrnRatePlus100 = this.getDollarRateWhenGrnRatePlus100().toFixed(2)
+                document.write(`Баланс рахунку після поповнення: ${add}<br>`)
+                document.write(`Баланс рахунку після зняття: ${withdrawal}<br>`)
+            }
+        }
+        let grnSum = parseInt(prompt("Введіть суму в гривнях"))
+        let money = new TMoney(200000)
+        money.run(grnSum); 
+    </script>
+</body>
+
+</html>

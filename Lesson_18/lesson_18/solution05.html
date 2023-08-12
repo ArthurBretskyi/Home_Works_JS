@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/solution05.css">
+    <title>Solution 05</title>
+</head>
+
+<body>
+    <h1 class="title">Задача 5. Користувач задає кількість рядків і стовпців. Відобразити таблицю, у клітинках якої
+        знаходяться числа 1, 2, 3,
+        …</h1>
+    <div class="container">
+        <div class="form__line">
+            <label class="label" for="line">Введіть кількість рядків</label>
+            <input class="inp" id="line" autocomplete="off" placeholder="Введіть кількість рядків" name="line"
+                type="number">
+        </div>
+        <div class="form__line">
+            <label class="label" for="column">Введіть кількість стовпців</label>
+            <input class="inp" id="column" autocomplete="off" placeholder="Введіть кількість стовпців" name="column"
+                type="number">
+        </div>
+        <div id="button">
+            <button class="btn">Відобразити таблицю</button>
+        </div>
+        <div class="table"></div>
+    </div>
+    <script>
+
+        function createTable() {
+            const userLineNum = parseInt(document.getElementById('line').value)
+            const userColumnNum = parseInt(document.getElementById('column').value)
+            let counter = 0
+            const tableEl = document.createElement('table')
+            for (let i = 0; i < userLineNum; i++) {
+                const trEl = document.createElement('tr')
+                for (let j = 0; j < userColumnNum; j++) {
+                    const tdEl = document.createElement('td')
+                    counter++
+                    tdEl.innerText = counter
+                    trEl.append(tdEl)
+                }
+                tableEl.append(trEl)
+            }
+            document.querySelector('.table').append(tableEl)
+        }
+        document.getElementById('button').onclick = createTable
+    </script>
+</body>
+
+</html>

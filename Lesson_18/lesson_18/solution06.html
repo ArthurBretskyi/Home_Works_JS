@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/solution06.css">
+    <title>Solution 06</title>
+</head>
+
+<body>
+    <h1 class="title">Задача 6. Користувач задає кількість оцінок і натискає на кнопку «get table». В результаті
+        формується таблиця з input,
+        куди користувач вводить оцінки. Після цього натискає на кнопку “get sum” і знаходить середнє значення.</h1>
+    <div class="container">
+        <div class="form_line">
+            <label>Кількість оцінок</label>
+            <input class="inp" id="score" autocomplete="off" placeholder="Введіть кількість оцінок" name="score"
+                type="number">
+        </div>
+        <div id="get_table">
+            <button class="btn">get table</button>
+        </div>
+        <div class="table">Ваші оцінки:</div>
+        <div id="get_sum">
+            <button class="btn">get average</button>
+        </div>
+        <div class="averageRes">Середнє значення:</div>
+    </div>
+    <script>
+        function getTable() {
+            const userScoresAmount = document.getElementById("score").value
+            for (let i = 0; i < userScoresAmount; i++) {
+                const tableEl = document.createElement('input')
+                tableEl.classList = "input_scores"
+                document.querySelector('.table').append(tableEl)
+            }
+        }
+        document.getElementById('get_table').onclick = getTable
+
+        function getAverage() {
+            let userScores = document.getElementsByClassName('input_scores')
+            let sum = 0
+            for (const score of userScores) {
+                sum += parseInt(score.value)
+            }
+            let average = sum / userScores.length
+            document.querySelector('.averageRes').append(average).toFixed(2)
+        }
+        document.getElementById('get_sum').onclick = getAverage
+
+    </script>
+</body>
+
+</html>
